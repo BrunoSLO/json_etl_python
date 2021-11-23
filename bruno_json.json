@@ -1,0 +1,17 @@
+[
+    {
+        "Nombre": "Bruno",
+        "Apellido": "Rotemberg",
+        "DNI": "39.570.815",
+        "prendas": [
+            {
+                "prenda": "zapatillas",
+                "cantidad": 6
+            },
+            {
+                "prenda": "pantalones",
+                "cantidad": 2
+            }
+        ]
+    }
+]
