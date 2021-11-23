@@ -46,4 +46,32 @@ if __name__ == '__main__':
     # y verifique si los primeros usuarios (mirando la página a ojo)
     # los datos recolectados son correctos.
 
+    response = requests.get(url)
+    data = json.loads(response.text)
+    data = response.json()
+    
+    #cantidad de ussuarios(10)
+    ids = range(1,11)
+
+    
+   
+
+    #comprension de listas basado en bucle anterior
+    total_tit_completados = [x.get('userId') for x in data if x['completed']== True]
+    
+    #comprension de listas que arroja el numero de completados por cada usuario
+    tit_usuarios = [total_tit_completados.count(i) for i in ids]
+    print(tit_usuarios)
+
+    colores = ['red', 'green', 'orange', 'black', 'blue', 'cyan', 'fuchsia', 'brown', 'gold', 'gray']
+    
+    fig = plt.figure()
+    ax = fig.add_subplot()
+    ax.bar(ids, tit_usuarios, color=colores, edgecolor='crimson')
+    ax.set_title('TITULOS COMPLETADOS POR USUARIOS')
+    ax.set_ylabel('Cantidad de titulos completados')
+    ax.set_xlabel('Usuarios')
+    plt.show()
+            
+   
     print("terminamos")
